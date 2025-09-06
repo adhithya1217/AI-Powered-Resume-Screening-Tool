@@ -1,3 +1,5 @@
+pip install pdfplumber
+
 import streamlit as st
 import pdfplumber
 import spacy
@@ -45,3 +47,4 @@ if st.button("Rank Candidates"):
         scores = rank_resumes(resume_texts, job_desc_clean)
         results = pd.DataFrame({"Resume": resume_names, "Score": scores})
         st.dataframe(results.sort_values(by="Score", ascending=False))
+
